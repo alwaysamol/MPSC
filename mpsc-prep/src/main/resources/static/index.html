@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPSC Prep &mdash; MCQ Practice & Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css?v=3" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#" data-view="practice">
+            <i class="bi bi-mortarboard-fill me-2"></i>MPSC Prep
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navItems">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navItems">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#" data-view="practice"><i class="bi bi-journal-text me-1"></i>Practice</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-view="quiz"><i class="bi bi-patch-question me-1"></i>Take Quiz</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-view="ai"><i class="bi bi-stars me-1"></i>AI MCQs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-view="aisearch"><i class="bi bi-robot me-1"></i>AI Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-view="learn"><i class="bi bi-youtube me-1"></i>Learn More</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-view="about"><i class="bi bi-info-circle me-1"></i>About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero py-5">
+    <div class="container text-center text-white">
+        <h1 class="display-5 fw-bold mb-2">Crack the MPSC Exam</h1>
+        <p class="lead mb-0">Practice MCQs, take timed quizzes, and learn from curated videos.</p>
+    </div>
+</header>
+
+<main class="container py-4">
+
+    <!-- ===================== PRACTICE VIEW ===================== -->
+    <section data-section="practice">
+        <div class="card shadow-sm controls-card mb-4">
+            <div class="card-body">
+                <div class="row g-3 align-items-end">
+                    <div class="col-12 col-lg-5">
+                        <label class="form-label small fw-semibold text-muted">Search questions</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                            <input type="text" id="searchInput" class="form-control"
+                                   placeholder="Search by keyword, e.g. Constitution, Godavari, RBI...">
+                            <button class="btn btn-outline-secondary" id="clearSearch" type="button" title="Clear"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <label class="form-label small fw-semibold text-muted">Level</label>
+                        <select id="levelSelect" class="form-select">
+                            <option value="">All levels</option>
+                            <option value="basic">Basic</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <label class="form-label small fw-semibold text-muted">Subject</label>
+                        <select id="categorySelect" class="form-select"><option value="">All subjects</option></select>
+                    </div>
+                    <div class="col-12 col-lg-1 d-grid">
+                        <button class="btn btn-primary" id="resetBtn" type="button" title="Reset filters"><i class="bi bi-arrow-counterclockwise"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0 text-muted" id="resultCount">Loading questions...</h5>
+            <span class="badge text-bg-light border d-none" id="activeFilters"></span>
+        </div>
+
+        <div id="questionList" class="row g-3"></div>
+
+        <div id="emptyState" class="text-center text-muted py-5 d-none">
+            <i class="bi bi-inboxes display-4 d-block mb-3"></i>
+            <p class="mb-0">No questions match your search. Try different keywords or filters.</p>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-primary px-4 d-none" id="loadMoreBtn"><i class="bi bi-plus-circle me-1"></i>Load more</button>
+        </div>
+    </section>
+
+    <!-- ===================== QUIZ VIEW ===================== -->
+    <section data-section="quiz" class="d-none">
+        <!-- Setup -->
+        <div id="quizSetup" class="card shadow-sm controls-card mb-4">
+            <div class="card-body">
+                <h4 class="fw-bold mb-1"><i class="bi bi-patch-question me-2 text-primary"></i>Start a Quiz</h4>
+                <p class="text-muted">Answer the questions, then submit to see your score and the correct answers.</p>
+                <div class="row g-3 align-items-end">
+                    <div class="col-6 col-md-4">
+                        <label class="form-label small fw-semibold text-muted">Number of questions</label>
+                        <select id="quizCount" class="form-select">
+                            <option value="5">5 questions</option>
+                            <option value="10" selected>10 questions</option>
+                            <option value="15">15 questions</option>
+                            <option value="20">20 questions</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <label class="form-label small fw-semibold text-muted">Level</label>
+                        <select id="quizLevel" class="form-select">
+                            <option value="">All levels</option>
+                            <option value="basic">Basic</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label class="form-label small fw-semibold text-muted">Subject</label>
+                        <select id="quizCategory" class="form-select"><option value="">All subjects</option></select>
+                    </div>
+                    <div class="col-12 d-grid d-md-block">
+                        <button class="btn btn-primary px-4" id="startQuizBtn"><i class="bi bi-play-fill me-1"></i>Start Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active quiz -->
+        <div id="quizActive" class="d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3 sticky-progress">
+                <h5 class="mb-0" id="quizProgress">Answered 0 of 10</h5>
+                <span class="badge text-bg-primary fs-6" id="quizAnsweredBadge">0 / 10</span>
+            </div>
+            <div class="progress mb-4" style="height:8px;">
+                <div class="progress-bar" id="quizProgressBar" style="width:0%"></div>
+            </div>
+            <div id="quizQuestions" class="row g-3"></div>
+            <div class="text-center mt-4">
+                <button class="btn btn-success btn-lg px-5" id="submitQuizBtn"><i class="bi bi-check2-circle me-1"></i>Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="quizResult" class="d-none">
+            <div class="card shadow-sm result-card mb-4 text-center">
+                <div class="card-body py-4">
+                    <div class="score-circle mx-auto mb-3" id="scoreCircle">
+                        <span id="scorePercent">0%</span>
+                    </div>
+                    <h3 class="fw-bold mb-1" id="scoreHeadline">Your Score</h3>
+                    <p class="lead mb-3" id="scoreLine">0 out of 0 correct</p>
+                    <div class="row g-3 justify-content-center mb-3">
+                        <div class="col-4 col-md-3"><div class="mini-stat correct-stat"><div class="fs-4 fw-bold" id="correctCount">0</div><div class="small">Correct</div></div></div>
+                        <div class="col-4 col-md-3"><div class="mini-stat wrong-stat"><div class="fs-4 fw-bold" id="wrongCount">0</div><div class="small">Wrong</div></div></div>
+                        <div class="col-4 col-md-3"><div class="mini-stat skip-stat"><div class="fs-4 fw-bold" id="skipCount">0</div><div class="small">Skipped</div></div></div>
+                    </div>
+                    <button class="btn btn-primary px-4" id="retakeBtn"><i class="bi bi-arrow-repeat me-1"></i>Take Another Quiz</button>
+                </div>
+            </div>
+            <h5 class="text-muted mb-3"><i class="bi bi-list-check me-1"></i>Review your answers</h5>
+            <div id="quizReview" class="row g-3"></div>
+        </div>
+    </section>
+
+    <!-- ===================== AI MCQ GENERATOR VIEW ===================== -->
+    <section data-section="ai" class="d-none">
+        <div class="card shadow-sm controls-card mb-4">
+            <div class="card-body">
+                <h4 class="fw-bold mb-1"><i class="bi bi-stars me-2 text-primary"></i>AI MCQ Generator</h4>
+                <p class="text-muted">Generate unlimited fresh MCQs on any topic using Grok AI. Optionally save them to your question bank.</p>
+                <div id="aiNotConfigured" class="alert alert-warning d-none">
+                    <i class="bi bi-exclamation-triangle me-1"></i>
+                    AI features are not configured. Set the <code>GROK_API_KEY</code> environment variable and restart the app.
+                </div>
+                <div class="row g-3 align-items-end">
+                    <div class="col-12 col-lg-5">
+                        <label class="form-label small fw-semibold text-muted">Topic (optional)</label>
+                        <input type="text" id="aiTopic" class="form-control" placeholder="e.g. Indian Constitution, Maratha Empire, Monsoons...">
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <label class="form-label small fw-semibold text-muted">Level</label>
+                        <select id="aiLevel" class="form-select">
+                            <option value="basic">Basic</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <label class="form-label small fw-semibold text-muted">Subject</label>
+                        <select id="aiCategory" class="form-select"><option value="">General Knowledge</option></select>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <label class="form-label small fw-semibold text-muted">How many</label>
+                        <select id="aiCount" class="form-select">
+                            <option value="3">3</option>
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-3 align-items-center">
+                        <button class="btn btn-primary px-4" id="aiGenerateBtn"><i class="bi bi-magic me-1"></i>Generate MCQs</button>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="aiSave">
+                            <label class="form-check-label small text-muted" for="aiSave">Save to question bank</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="aiStatus" class="text-center text-muted py-3 d-none"></div>
+        <div id="aiQuestionList" class="row g-3"></div>
+    </section>
+
+    <!-- ===================== AI SEARCH VIEW ===================== -->
+    <section data-section="aisearch" class="d-none">
+        <div class="card shadow-sm controls-card mb-4">
+            <div class="card-body">
+                <h4 class="fw-bold mb-1"><i class="bi bi-robot me-2 text-primary"></i>AI Search</h4>
+                <p class="text-muted">Ask anything about MPSC topics, current affairs, history, polity and more. Powered by Grok AI.</p>
+                <div id="aiSearchNotConfigured" class="alert alert-warning d-none">
+                    <i class="bi bi-exclamation-triangle me-1"></i>
+                    AI features are not configured. Set the <code>GROK_API_KEY</code> environment variable and restart the app.
+                </div>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                    <input type="text" id="aiSearchInput" class="form-control" placeholder="e.g. Explain the Directive Principles of State Policy">
+                    <button class="btn btn-primary px-4" id="aiSearchBtn"><i class="bi bi-send me-1"></i>Ask</button>
+                </div>
+                <div class="mt-2 d-flex flex-wrap gap-2" id="aiSuggestions"></div>
+            </div>
+        </div>
+
+        <div id="aiSearchStatus" class="text-center text-muted py-3 d-none"></div>
+        <div id="aiAnswerCard" class="card shadow-sm d-none">
+            <div class="card-body">
+                <h6 class="fw-bold text-primary mb-2"><i class="bi bi-robot me-1"></i>Grok says</h6>
+                <div id="aiAnswer" class="ai-answer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== LEARN MORE VIEW ===================== -->
+    <section data-section="learn" class="d-none">
+        <h2 class="fw-bold mb-1"><i class="bi bi-youtube text-danger me-2"></i>Learn More</h2>
+        <p class="text-muted mb-4">Curated YouTube resources by subject. Click any card to open lectures and playlists in a new tab.</p>
+        <div id="learnGrid" class="row g-3"></div>
+        <p class="text-muted small mt-3"><i class="bi bi-info-circle me-1"></i>Links open YouTube search results so you always get fresh, relevant videos.</p>
+    </section>
+
+    <!-- ===================== ABOUT VIEW ===================== -->
+    <section data-section="about" class="d-none">
+        <div class="card shadow-sm controls-card about-card">
+            <div class="card-body p-4 p-md-5">
+                <h2 class="fw-bold mb-3"><i class="bi bi-mortarboard-fill text-primary me-2"></i>About MPSC Prep</h2>
+                <p>MPSC Prep is a free practice application for aspirants of the <strong>Maharashtra Public
+                    Service Commission (MPSC)</strong> examinations. It helps you revise key concepts through
+                    multiple-choice questions, test yourself with quizzes, and explore curated learning videos.</p>
+
+                <h5 class="fw-semibold mt-4">What you can do</h5>
+                <ul class="feature-list">
+                    <li><i class="bi bi-search text-primary me-2"></i><strong>Practice:</strong> browse and search questions, filter by level and subject, and reveal answers with explanations.</li>
+                    <li><i class="bi bi-patch-question text-primary me-2"></i><strong>Take Quizzes:</strong> attempt a set of questions, submit, and get instant marks with correct answers.</li>
+                    <li><i class="bi bi-youtube text-primary me-2"></i><strong>Learn More:</strong> jump to handpicked YouTube lectures for every subject.</li>
+                </ul>
+
+                <h5 class="fw-semibold mt-4">Subjects covered</h5>
+                <div id="aboutSubjects" class="d-flex flex-wrap gap-2 mb-3"></div>
+
+                <h5 class="fw-semibold mt-4">How scoring works</h5>
+                <p class="mb-2">Each correct answer earns 1 mark. After you submit a quiz you'll see how many
+                    answers were correct, how many were wrong, and the right answer with an explanation for every question.</p>
+
+                <h5 class="fw-semibold mt-4">Built with</h5>
+                <p class="mb-0">Java &amp; Spring Boot, MongoDB, and a Bootstrap front-end. This is a study aid;
+                    always cross-check facts with official MPSC sources and current notifications.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="text-center text-muted py-4 small border-top">
+    MPSC Prep &middot; Built with Spring Boot, MongoDB &amp; Bootstrap &middot; For study practice
+</footer>
+
+<!-- Practice question card template -->
+<template id="questionTemplate">
+    <div class="col-12">
+        <div class="card question-card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge level-badge"></span>
+                        <span class="badge text-bg-light border category-badge"></span>
+                    </div>
+                    <span class="text-muted small q-index"></span>
+                </div>
+                <p class="question-text fw-semibold mb-3"></p>
+                <div class="options list-group"></div>
+                <div class="explanation alert alert-success mt-3 mb-0 d-none">
+                    <i class="bi bi-lightbulb-fill me-1"></i><span class="explanation-text"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js?v=3"></script>
+</body>
+</html>

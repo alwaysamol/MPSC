@@ -1,0 +1,322 @@
+[
+  {
+    "questionText": "Who is known as the 'Father of the Indian Constitution'?",
+    "options": ["Dr. B. R. Ambedkar", "Jawaharlal Nehru", "Sardar Vallabhbhai Patel", "Mahatma Gandhi"],
+    "correctIndex": 0,
+    "explanation": "Dr. B. R. Ambedkar chaired the Drafting Committee of the Constituent Assembly and is regarded as the chief architect of the Indian Constitution.",
+    "level": "basic",
+    "category": "Polity"
+  },
+  {
+    "questionText": "In which year did India gain independence from British rule?",
+    "options": ["1945", "1946", "1947", "1950"],
+    "correctIndex": 2,
+    "explanation": "India became independent on 15 August 1947.",
+    "level": "basic",
+    "category": "History"
+  },
+  {
+    "questionText": "The Quit India Movement was launched in which year?",
+    "options": ["1930", "1942", "1945", "1920"],
+    "correctIndex": 1,
+    "explanation": "The Quit India Movement was launched by Mahatma Gandhi on 8 August 1942 at the Bombay session of the All India Congress Committee.",
+    "level": "advanced",
+    "category": "History"
+  },
+  {
+    "questionText": "Who founded the Maratha Empire?",
+    "options": ["Chhatrapati Shivaji Maharaj", "Chhatrapati Sambhaji Maharaj", "Baji Rao I", "Shahu Maharaj"],
+    "correctIndex": 0,
+    "explanation": "Chhatrapati Shivaji Maharaj founded the Maratha Empire in 1674.",
+    "level": "basic",
+    "category": "History"
+  },
+  {
+    "questionText": "The Third Battle of Panipat (1761) was fought between the Marathas and whom?",
+    "options": ["Ahmad Shah Abdali", "The British East India Company", "The Mughals", "The Portuguese"],
+    "correctIndex": 0,
+    "explanation": "The Third Battle of Panipat was fought on 14 January 1761 between the Maratha Empire and Ahmad Shah Abdali (Durrani).",
+    "level": "advanced",
+    "category": "History"
+  },
+  {
+    "questionText": "How many Fundamental Rights are currently guaranteed by the Indian Constitution?",
+    "options": ["6", "7", "5", "8"],
+    "correctIndex": 0,
+    "explanation": "There are 6 Fundamental Rights after the Right to Property was removed by the 44th Amendment in 1978.",
+    "level": "basic",
+    "category": "Polity"
+  },
+  {
+    "questionText": "Which Article of the Indian Constitution deals with the Right to Constitutional Remedies?",
+    "options": ["Article 32", "Article 21", "Article 14", "Article 19"],
+    "correctIndex": 0,
+    "explanation": "Article 32 provides the Right to Constitutional Remedies, which Dr. Ambedkar called the 'heart and soul' of the Constitution.",
+    "level": "advanced",
+    "category": "Polity"
+  },
+  {
+    "questionText": "Who is the constitutional head of a State in India?",
+    "options": ["Governor", "Chief Minister", "President", "Prime Minister"],
+    "correctIndex": 0,
+    "explanation": "The Governor is the constitutional (nominal) head of a State, while the Chief Minister is the real executive head.",
+    "level": "basic",
+    "category": "Polity"
+  },
+  {
+    "questionText": "The 73rd Constitutional Amendment Act is related to which of the following?",
+    "options": ["Panchayati Raj institutions", "Municipalities", "Goods and Services Tax", "Anti-defection law"],
+    "correctIndex": 0,
+    "explanation": "The 73rd Amendment (1992) gave constitutional status to Panchayati Raj institutions (rural local self-government).",
+    "level": "advanced",
+    "category": "Polity"
+  },
+  {
+    "questionText": "Which is the longest river in India?",
+    "options": ["Ganga", "Godavari", "Yamuna", "Narmada"],
+    "correctIndex": 0,
+    "explanation": "The Ganga, at about 2,525 km, is the longest river flowing entirely within India.",
+    "level": "basic",
+    "category": "Geography"
+  },
+  {
+    "questionText": "Which river is known as the 'Dakshin Ganga' (Ganga of the South)?",
+    "options": ["Godavari", "Krishna", "Kaveri", "Tungabhadra"],
+    "correctIndex": 0,
+    "explanation": "The Godavari is the longest river of peninsular India and is called the Dakshin Ganga.",
+    "level": "advanced",
+    "category": "Geography"
+  },
+  {
+    "questionText": "Which mountain range runs along the western coast of Maharashtra?",
+    "options": ["Sahyadri (Western Ghats)", "Satpura", "Aravalli", "Vindhya"],
+    "correctIndex": 0,
+    "explanation": "The Sahyadri, or Western Ghats, runs parallel to the western coast and passes through Maharashtra.",
+    "level": "advanced",
+    "category": "Geography"
+  },
+  {
+    "questionText": "What is the capital of Maharashtra?",
+    "options": ["Mumbai", "Pune", "Nagpur", "Nashik"],
+    "correctIndex": 0,
+    "explanation": "Mumbai is the capital of Maharashtra; Nagpur serves as the winter (second) capital.",
+    "level": "basic",
+    "category": "Geography"
+  },
+  {
+    "questionText": "Which is the highest peak in Maharashtra?",
+    "options": ["Kalsubai", "Salher", "Mahabaleshwar", "Harishchandragad"],
+    "correctIndex": 0,
+    "explanation": "Kalsubai, at about 1,646 metres, is the highest peak in Maharashtra.",
+    "level": "advanced",
+    "category": "Geography"
+  },
+  {
+    "questionText": "The Reserve Bank of India (RBI) was established in which year?",
+    "options": ["1935", "1947", "1950", "1969"],
+    "correctIndex": 0,
+    "explanation": "The RBI was established on 1 April 1935 under the Reserve Bank of India Act, 1934.",
+    "level": "basic",
+    "category": "Economics"
+  },
+  {
+    "questionText": "The Goods and Services Tax (GST) was implemented in India on 1 July of which year?",
+    "options": ["2016", "2017", "2018", "2015"],
+    "correctIndex": 1,
+    "explanation": "GST came into effect on 1 July 2017 as a unified indirect tax across India.",
+    "level": "advanced",
+    "category": "Economics"
+  },
+  {
+    "questionText": "What does 'GDP' stand for?",
+    "options": ["Gross Domestic Product", "Gross Domestic Profit", "General Domestic Product", "Gross Demand Product"],
+    "correctIndex": 0,
+    "explanation": "GDP stands for Gross Domestic Product, the total value of goods and services produced within a country.",
+    "level": "basic",
+    "category": "Economics"
+  },
+  {
+    "questionText": "NITI Aayog replaced which institution in 2015?",
+    "options": ["Planning Commission", "Finance Commission", "Election Commission", "University Grants Commission"],
+    "correctIndex": 0,
+    "explanation": "NITI Aayog (National Institution for Transforming India) replaced the Planning Commission on 1 January 2015.",
+    "level": "advanced",
+    "category": "Economics"
+  },
+  {
+    "questionText": "Which gas do plants primarily absorb from the atmosphere for photosynthesis?",
+    "options": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+    "correctIndex": 0,
+    "explanation": "Plants absorb carbon dioxide and release oxygen during photosynthesis.",
+    "level": "basic",
+    "category": "Science"
+  },
+  {
+    "questionText": "What is the chemical symbol for Gold?",
+    "options": ["Au", "Ag", "Gd", "Go"],
+    "correctIndex": 0,
+    "explanation": "The symbol for gold is 'Au', derived from the Latin word 'aurum'.",
+    "level": "basic",
+    "category": "Science"
+  },
+  {
+    "questionText": "Which vitamin is synthesised in the human body upon exposure to sunlight?",
+    "options": ["Vitamin D", "Vitamin C", "Vitamin A", "Vitamin B12"],
+    "correctIndex": 0,
+    "explanation": "Vitamin D is produced in the skin when it is exposed to ultraviolet rays from sunlight.",
+    "level": "advanced",
+    "category": "Science"
+  },
+  {
+    "questionText": "What is the SI unit of electric current?",
+    "options": ["Ampere", "Volt", "Ohm", "Watt"],
+    "correctIndex": 0,
+    "explanation": "The ampere (A) is the SI base unit of electric current.",
+    "level": "advanced",
+    "category": "Science"
+  },
+  {
+    "questionText": "How many bones are there in the adult human body?",
+    "options": ["206", "201", "210", "212"],
+    "correctIndex": 0,
+    "explanation": "An adult human body has 206 bones; a newborn has around 300 that later fuse.",
+    "level": "basic",
+    "category": "Science"
+  },
+  {
+    "questionText": "Where is the headquarters of the United Nations located?",
+    "options": ["New York", "Geneva", "Paris", "London"],
+    "correctIndex": 0,
+    "explanation": "The UN headquarters is located in New York City, United States.",
+    "level": "basic",
+    "category": "General Knowledge"
+  },
+  {
+    "questionText": "Who is called the 'Father of the Indian Space Programme'?",
+    "options": ["Dr. Vikram Sarabhai", "Dr. A. P. J. Abdul Kalam", "Dr. Homi Bhabha", "Satish Dhawan"],
+    "correctIndex": 0,
+    "explanation": "Dr. Vikram Sarabhai is regarded as the father of the Indian space programme and founder of ISRO.",
+    "level": "advanced",
+    "category": "General Knowledge"
+  },
+  {
+    "questionText": "Maharashtra was formed as a separate state on 1 May of which year?",
+    "options": ["1960", "1956", "1947", "1966"],
+    "correctIndex": 0,
+    "explanation": "Maharashtra was formed on 1 May 1960 (celebrated as Maharashtra Day) under the Bombay Reorganisation Act.",
+    "level": "basic",
+    "category": "Maharashtra"
+  },
+  {
+    "questionText": "The Samyukta Maharashtra Movement demanded a Marathi-speaking state with which city as its capital?",
+    "options": ["Mumbai", "Pune", "Nagpur", "Aurangabad"],
+    "correctIndex": 0,
+    "explanation": "The Samyukta Maharashtra Movement demanded a separate Marathi-speaking state with Mumbai (Bombay) as its capital.",
+    "level": "advanced",
+    "category": "Maharashtra"
+  },
+  {
+    "questionText": "Who wrote the famous Marathi book 'Shyamchi Aai'?",
+    "options": ["Sane Guruji", "V. S. Khandekar", "P. L. Deshpande", "Kusumagraj"],
+    "correctIndex": 0,
+    "explanation": "'Shyamchi Aai' was written by Sane Guruji (Pandurang Sadashiv Sane).",
+    "level": "basic",
+    "category": "Maharashtra"
+  },
+  {
+    "questionText": "The Abhangas (devotional poetry) and the 'Gatha' are most closely associated with which saint of Maharashtra?",
+    "options": ["Sant Tukaram", "Sant Dnyaneshwar", "Sant Eknath", "Sant Namdev"],
+    "correctIndex": 0,
+    "explanation": "Sant Tukaram's devotional compositions are collected in the 'Tukaram Gatha'.",
+    "level": "advanced",
+    "category": "Maharashtra"
+  },
+  {
+    "questionText": "Who was the first President of India?",
+    "options": ["Dr. Rajendra Prasad", "Dr. S. Radhakrishnan", "Jawaharlal Nehru", "Dr. Zakir Husain"],
+    "correctIndex": 0,
+    "explanation": "Dr. Rajendra Prasad was the first President of India (1950-1962).",
+    "level": "basic",
+    "category": "Polity"
+  },
+  {
+    "questionText": "The Dandi March (Salt Satyagraha) led by Gandhi began in which year?",
+    "options": ["1930", "1920", "1942", "1947"],
+    "correctIndex": 0,
+    "explanation": "The Dandi March began on 12 March 1930 from the Sabarmati Ashram.",
+    "level": "advanced",
+    "category": "History"
+  },
+  {
+    "questionText": "Who was the first Prime Minister of India?",
+    "options": ["Jawaharlal Nehru", "Sardar Vallabhbhai Patel", "Dr. Rajendra Prasad", "Lal Bahadur Shastri"],
+    "correctIndex": 0,
+    "explanation": "Jawaharlal Nehru served as India's first Prime Minister from 1947 to 1964.",
+    "level": "basic",
+    "category": "Polity"
+  },
+  {
+    "questionText": "What is the maximum sanctioned strength of the Rajya Sabha as per the Constitution?",
+    "options": ["250", "245", "240", "552"],
+    "correctIndex": 0,
+    "explanation": "The Constitution permits a maximum of 250 members in the Rajya Sabha (238 elected + 12 nominated).",
+    "level": "advanced",
+    "category": "Polity"
+  },
+  {
+    "questionText": "What is the national animal of India?",
+    "options": ["Bengal Tiger", "Lion", "Elephant", "Peacock"],
+    "correctIndex": 0,
+    "explanation": "The Royal Bengal Tiger is the national animal of India; the peacock is the national bird.",
+    "level": "basic",
+    "category": "General Knowledge"
+  },
+  {
+    "questionText": "Which planet is known as the 'Red Planet'?",
+    "options": ["Mars", "Jupiter", "Venus", "Saturn"],
+    "correctIndex": 0,
+    "explanation": "Mars appears red due to iron oxide (rust) on its surface, earning it the name 'Red Planet'.",
+    "level": "basic",
+    "category": "Science"
+  },
+  {
+    "questionText": "The Indian National Congress was founded in which year?",
+    "options": ["1885", "1857", "1905", "1920"],
+    "correctIndex": 0,
+    "explanation": "The Indian National Congress was founded in 1885 by A. O. Hume along with Indian leaders.",
+    "level": "advanced",
+    "category": "History"
+  },
+  {
+    "questionText": "Which newspaper was started by Lokmanya Bal Gangadhar Tilak?",
+    "options": ["Kesari", "Young India", "Harijan", "The Hindu"],
+    "correctIndex": 0,
+    "explanation": "Tilak started the Marathi newspaper 'Kesari' and the English newspaper 'Maratha'.",
+    "level": "advanced",
+    "category": "Maharashtra"
+  },
+  {
+    "questionText": "Which is the largest state of India by area?",
+    "options": ["Rajasthan", "Madhya Pradesh", "Maharashtra", "Uttar Pradesh"],
+    "correctIndex": 0,
+    "explanation": "Rajasthan is the largest Indian state by area, covering about 342,239 sq km.",
+    "level": "basic",
+    "category": "Geography"
+  },
+  {
+    "questionText": "The Preamble declares India to be a Sovereign, Socialist, Secular, Democratic ____.",
+    "options": ["Republic", "Monarchy", "Federation", "Union"],
+    "correctIndex": 0,
+    "explanation": "The Preamble describes India as a Sovereign Socialist Secular Democratic Republic; 'Socialist' and 'Secular' were added by the 42nd Amendment (1976).",
+    "level": "advanced",
+    "category": "Polity"
+  },
+  {
+    "questionText": "Water (H2O) is made up of hydrogen and which other element?",
+    "options": ["Oxygen", "Nitrogen", "Carbon", "Helium"],
+    "correctIndex": 0,
+    "explanation": "A water molecule consists of two hydrogen atoms bonded to one oxygen atom.",
+    "level": "basic",
+    "category": "Science"
+  }
+]
