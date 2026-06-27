@@ -30,16 +30,38 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-
-        <!-- Embedded MongoDB so the app runs without installing MongoDB.
-             To use a real MongoDB instead, set spring.data.mongodb.uri in
-             application.properties and remove (or test-scope) this dependency. -->
-        <dependency>
-            <groupId>de.flapdoodle.embed</groupId>
-            <artifactId>de.flapdoodle.embed.mongo.spring3x</artifactId>
-            <version>4.18.0</version>
-        </dependency>
     </dependencies>
+
+    <profiles>
+        <!--
+            dev profile (active by default for local development).
+            Includes embedded MongoDB so the app works without installing anything.
+            Run locally: java -jar target/mpsc-prep.jar   (dev profile is used automatically)
+        -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>de.flapdoodle.embed</groupId>
+                    <artifactId>de.flapdoodle.embed.mongo.spring3x</artifactId>
+                    <version>4.18.0</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <!--
+            prod profile — used by the Dockerfile for cloud deployment.
+            No embedded MongoDB; the app connects to an external MongoDB Atlas cluster
+            via the MONGODB_URI environment variable set on the hosting platform.
+            Build: mvn clean package -Pprod -DskipTests
+        -->
+        <profile>
+            <id>prod</id>
+        </profile>
+    </profiles>
 
     <build>
         <finalName>mpsc-prep</finalName>

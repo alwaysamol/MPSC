@@ -6,7 +6,7 @@
     COPY pom.xml .
     COPY src ./src
     
-    RUN mvn clean package -DskipTests
+    RUN mvn clean package -Pprod -DskipTests
     
     # ---------- Runtime Stage ----------
     FROM eclipse-temurin:17-jre
@@ -19,4 +19,4 @@
     
     # Cap the JVM heap so the embedded MongoDB process also fits inside a small
     # (512 MB) free-tier container. The app reads $PORT from the platform.
-    ENTRYPOINT ["sh","-c","java -XX:MaxRAMPercentage=55 -jar app.jar"]
+    ENTRYPOINT ["sh","-c","java -XX:MaxRAMPercentage=65 -Dspring.profiles.active=prod -jar app.jar"]

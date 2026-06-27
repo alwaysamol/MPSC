@@ -10,7 +10,10 @@ services:
     healthCheckPath: /
     autoDeploy: true
     envVars:
-      # Set your Groq key in the Render dashboard (Environment tab) so it is
-      # never committed to git. It overrides the empty default in the app.
+      # MongoDB Atlas connection string — set in Render dashboard Environment tab.
+      # Format: mongodb+srv://user:pass@cluster.mongodb.net/mpsc?retryWrites=true&w=majority
+      - key: MONGODB_URI
+        sync: false
+      # Groq API key for AI MCQ generation and AI Search.
       - key: GROK_API_KEY
         sync: false
