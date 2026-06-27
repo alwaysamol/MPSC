@@ -4,3 +4,7 @@ target/
 *.iml
 .vscode/
 .mongodb/
+
+# Local-only secrets (API keys) — never commit
+config/
+

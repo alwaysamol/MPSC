@@ -17,4 +17,6 @@
     
     EXPOSE 8080
     
-    ENTRYPOINT ["java","-jar","app.jar"]
+    # Cap the JVM heap so the embedded MongoDB process also fits inside a small
+    # (512 MB) free-tier container. The app reads $PORT from the platform.
+    ENTRYPOINT ["sh","-c","java -XX:MaxRAMPercentage=55 -jar app.jar"]

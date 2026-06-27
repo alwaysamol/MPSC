@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mpsc-prep
+    runtime: docker
+    plan: free
+    # The Spring Boot app lives in the mpsc-prep subfolder of this repo.
+    rootDir: mpsc-prep
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      # Set your Groq key in the Render dashboard (Environment tab) so it is
+      # never committed to git. It overrides the empty default in the app.
+      - key: GROK_API_KEY
+        sync: false
