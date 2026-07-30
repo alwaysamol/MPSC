@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZONE ROYALE — Battle Royale</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- HUD -->
+<div id="hud" class="hidden">
+  <div id="top-left">
+    <div class="pill"><span id="alive-count">24</span> ALIVE</div>
+    <div class="pill kills"><span id="kill-count">0</span> KILLS</div>
+  </div>
+
+  <div id="zone-msg"></div>
+
+  <div id="killfeed"></div>
+
+  <div id="bottom-center">
+    <div id="heal-bar" class="hidden"><div id="heal-fill"></div><span id="heal-label">Healing...</span></div>
+    <div id="armor-bar"><div id="armor-fill"></div></div>
+    <div id="health-bar"><div id="health-fill"></div><span id="health-text">100</span></div>
+    <div id="items">
+      <div class="item-slot"><b>3</b> Bandage <span id="bandage-count">x0</span></div>
+      <div class="item-slot"><b>4</b> Medkit <span id="medkit-count">x0</span></div>
+    </div>
+  </div>
+
+  <div id="bottom-right">
+    <canvas id="minimap" width="200" height="200"></canvas>
+    <div id="weapon-slots">
+      <div class="wslot" id="wslot-0"><b>1</b> <span class="wname">Fists</span></div>
+      <div class="wslot" id="wslot-1"><b>2</b> <span class="wname">—</span></div>
+    </div>
+    <div id="ammo-display">— / —</div>
+  </div>
+
+  <div id="vignette"></div>
+</div>
+
+<!-- Start screen -->
+<div id="start-screen" class="screen">
+  <h1>ZONE<span>ROYALE</span></h1>
+  <p class="tagline">24 drop in. 1 walks out. Survive the zone.</p>
+  <div class="controls-box">
+    <div><b>WASD</b> Move</div>
+    <div><b>Mouse</b> Aim &amp; Shoot</div>
+    <div><b>R</b> Reload</div>
+    <div><b>1 / 2</b> Switch Weapon</div>
+    <div><b>3 / 4</b> Bandage / Medkit</div>
+    <div><b>Loot</b> Walk over items</div>
+  </div>
+  <button id="play-btn">DEPLOY</button>
+</div>
+
+<!-- End screen -->
+<div id="end-screen" class="screen hidden">
+  <h2 id="end-title">#1 SURVIVOR!</h2>
+  <p id="end-sub">You outlasted the battlegrounds.</p>
+  <div id="end-stats"></div>
+  <button id="restart-btn">DEPLOY AGAIN</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

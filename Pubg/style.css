@@ -1,0 +1,167 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: #0b0f0b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  user-select: none;
+}
+
+#game { display: block; width: 100vw; height: 100vh; cursor: crosshair; }
+
+.hidden { display: none !important; }
+
+/* ---------- HUD ---------- */
+#hud { position: fixed; inset: 0; pointer-events: none; }
+
+#top-left {
+  position: absolute; top: 16px; left: 16px;
+  display: flex; gap: 10px;
+}
+.pill {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff; font-weight: 700; letter-spacing: 1px;
+  padding: 8px 14px; border-radius: 4px; font-size: 14px;
+  border-left: 3px solid #f2a900;
+}
+.pill.kills { border-left-color: #e5443b; }
+.pill span { color: #f2a900; font-size: 16px; }
+.pill.kills span { color: #e5443b; }
+
+#zone-msg {
+  position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+  color: #fff; font-weight: 700; font-size: 15px; letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.5); padding: 8px 18px; border-radius: 4px;
+  text-shadow: 0 1px 3px #000;
+}
+#zone-msg.danger { color: #6db9ff; }
+
+#killfeed {
+  position: absolute; top: 16px; right: 16px;
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-end;
+}
+.feed-entry {
+  background: rgba(0, 0, 0, 0.6); color: #ddd;
+  padding: 5px 10px; border-radius: 3px; font-size: 13px;
+  animation: feedIn 0.2s ease-out;
+}
+.feed-entry .killer { color: #f2a900; font-weight: 600; }
+.feed-entry .victim { color: #e5443b; font-weight: 600; }
+.feed-entry.me .killer { color: #7CFC00; }
+@keyframes feedIn { from { transform: translateX(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ---------- Bottom center: health ---------- */
+#bottom-center {
+  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+  width: 380px; display: flex; flex-direction: column; gap: 5px;
+}
+#health-bar {
+  position: relative; height: 24px; background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.25);
+}
+#health-fill {
+  height: 100%; width: 100%;
+  background: linear-gradient(#fdfdfd, #cfcfcf);
+  transition: width 0.15s ease-out;
+}
+#health-fill.low { background: linear-gradient(#ff6a5e, #d43425); }
+#health-fill.mid { background: linear-gradient(#ffd76a, #e0a625); }
+#health-text {
+  position: absolute; inset: 0; text-align: center; line-height: 24px;
+  font-weight: 700; font-size: 13px; color: #222; mix-blend-mode: normal;
+  text-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
+#armor-bar {
+  height: 8px; background: rgba(0,0,0,0.6); border-radius: 3px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+#armor-fill { height: 100%; width: 0%; background: #4aa8ff; transition: width 0.2s; }
+
+#heal-bar {
+  position: relative; height: 18px; background: rgba(0,0,0,0.6);
+  border-radius: 3px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);
+}
+#heal-fill { height: 100%; width: 0%; background: #57c84d; }
+#heal-label {
+  position: absolute; inset: 0; text-align: center; line-height: 18px;
+  color: #fff; font-size: 11px; font-weight: 600; text-shadow: 0 1px 2px #000;
+}
+
+#items { display: flex; gap: 8px; justify-content: center; margin-top: 2px; }
+.item-slot {
+  background: rgba(0,0,0,0.55); color: #ccc; font-size: 12px;
+  padding: 4px 10px; border-radius: 3px;
+}
+.item-slot b { color: #f2a900; margin-right: 4px; }
+.item-slot span { color: #fff; font-weight: 600; }
+
+/* ---------- Bottom right: minimap & weapons ---------- */
+#bottom-right {
+  position: absolute; bottom: 22px; right: 16px;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+}
+#minimap {
+  border: 2px solid rgba(255,255,255,0.3); border-radius: 4px;
+  background: #22301f;
+}
+#weapon-slots { display: flex; gap: 6px; }
+.wslot {
+  background: rgba(0,0,0,0.55); color: #aaa; font-size: 12px;
+  padding: 6px 12px; border-radius: 3px; border: 1px solid transparent;
+  min-width: 110px;
+}
+.wslot b { color: #f2a900; margin-right: 5px; }
+.wslot.active { border-color: #f2a900; color: #fff; background: rgba(40,30,0,0.7); }
+#ammo-display {
+  color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 1px;
+  text-shadow: 0 1px 4px #000;
+}
+#ammo-display.reloading { color: #f2a900; font-size: 16px; }
+
+/* ---------- Damage vignette ---------- */
+#vignette {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(200, 30, 20, 0.55) 100%);
+  transition: opacity 0.3s;
+}
+
+/* ---------- Screens ---------- */
+.screen {
+  position: fixed; inset: 0; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at center, #1d2b1a 0%, #0a0f09 75%);
+  color: #fff; text-align: center;
+}
+.screen h1 {
+  font-size: 72px; font-weight: 900; letter-spacing: 8px; color: #f2a900;
+  text-shadow: 0 4px 20px rgba(242, 169, 0, 0.35);
+}
+.screen h1 span { color: #fff; font-weight: 300; }
+.tagline { color: #9db392; margin: 10px 0 30px; font-size: 16px; letter-spacing: 2px; }
+.controls-box {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px;
+  background: rgba(0,0,0,0.4); padding: 20px 34px; border-radius: 6px;
+  margin-bottom: 36px; color: #ccc; font-size: 14px; text-align: left;
+}
+.controls-box b { color: #f2a900; display: inline-block; min-width: 60px; }
+.screen button {
+  font-size: 22px; font-weight: 800; letter-spacing: 3px;
+  padding: 16px 60px; border: none; border-radius: 4px; cursor: pointer;
+  background: #f2a900; color: #1a1a1a;
+  box-shadow: 0 6px 24px rgba(242, 169, 0, 0.4);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.screen button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(242, 169, 0, 0.55); }
+
+#end-screen h2 { font-size: 54px; color: #f2a900; letter-spacing: 4px; text-shadow: 0 4px 18px rgba(0,0,0,0.7); }
+#end-screen.lost h2 { color: #e5443b; }
+#end-sub { color: #b8c8ae; margin: 8px 0 22px; font-size: 17px; }
+#end-stats {
+  display: flex; gap: 26px; margin-bottom: 34px;
+}
+#end-stats .stat {
+  background: rgba(0,0,0,0.45); padding: 14px 26px; border-radius: 6px;
+}
+#end-stats .stat .num { font-size: 30px; font-weight: 800; color: #fff; }
+#end-stats .stat .lbl { font-size: 12px; color: #9db392; letter-spacing: 2px; margin-top: 3px; }
